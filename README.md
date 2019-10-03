@@ -75,3 +75,7 @@ Ansible:
       register: result
 
 ```
+
+
+## Donate
+[![Paypal](https://raw.githubusercontent.com/MephistoXoL/Things/master/paypal.png)](https://www.paypal.me/mephistoxol)
