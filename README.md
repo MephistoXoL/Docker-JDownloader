@@ -46,7 +46,7 @@ services:
     labels:
       - traefik.enable: "false"
     networks:      
-      - internal-network
+      - proxy-tier
     volumes:
       - /your/path/for/data:/app/JDownloader/Downloads
 ```
@@ -62,7 +62,7 @@ Ansible:
           DEVICENAME: "yourdevicename"
           EMAIL: "MyJDownloaderAccount"
           PASSWORD: "MyJDownloaderPassword"
-        restart_policy: unless-stopped
+        restart_policy: always
         # Traefik optional
         labels:
           traefik.enable: "false"
