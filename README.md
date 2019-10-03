@@ -1,7 +1,7 @@
 ![Docker-JDownloader](https://raw.githubusercontent.com/MephistoXoL/Docker-JDownloader/master/Docker-JDownloader.png)
 
 # Docker-JDownloader
-Docker Image JDownloader for Raspberry pi 3
+Docker Image JDownloader for Raspberry pi 3+/3/2
 
 The image base is ```bellsoft/liberica-openjdk-alpine:latest-armv7l```.
 
