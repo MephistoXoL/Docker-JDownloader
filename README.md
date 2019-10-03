@@ -3,7 +3,7 @@
 # Docker-JDownloader
 Docker Image JDownloader for Raspberry pi 3
 
-The image base is ```bellsoft/liberica-openjdk-alpine:latest-armv7l```
+The image base is ```bellsoft/liberica-openjdk-alpine:latest-armv7l```.
 Container firts run download the last JDownloader version and install it, wait a while to complete the installation (around 5 min.).
 The script entrypoint.sh will check and create the config file where are located MyJDownloader credentials.
 
