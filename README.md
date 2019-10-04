@@ -46,7 +46,7 @@ services:
       - EMAIL=MyJDownloaderAccount
       - PASSWORD=MyJDownloaderPassword
       - DEVICENAME=yourdevicename
-    # Traefik optional
+    # Traefik v1.7 optional
     labels:
       - traefik.enable: "false"
     networks:      
@@ -67,7 +67,7 @@ Ansible:
           EMAIL: "MyJDownloaderAccount"
           PASSWORD: "MyJDownloaderPassword"
         restart_policy: always
-        # Traefik optional
+        # Traefik v1.7 optional
         labels:
           traefik.enable: "false"
         networks:
