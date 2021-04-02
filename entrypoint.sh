@@ -41,9 +41,10 @@ if [ ! -f $FILE_INIT ]; then
         echo ""
         echo "#Updating... Wait..."
         while [ -d /app/JDownloader/tmp/update/self/JD ]; do sleep 2; done
-        ps axf | grep java | grep -v grep | awk '{kill -9 $1}'
+        # Kill JDownloader updater when Update is completed
+        ps axf | grep java | grep -v grep | awk '{print $1}' | xargs kill -9
         echo "####################"
-        echo "#Update Complete..."
+        echo "#Update Completed..."
         echo "####################"
 fi
 echo "#########################################"

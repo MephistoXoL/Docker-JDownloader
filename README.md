@@ -1,9 +1,18 @@
 ![Docker-JDownloader](https://raw.githubusercontent.com/MephistoXoL/Docker-JDownloader/master/Docker-JDownloader.png)
 
 # Docker-JDownloader
-Docker Image JDownloader for Raspberry pi 3+/3/2
+Docker MultiArch Image JDownloader for Raspberry pi 4/3+/3/2, arm64 & amd64
 
-The image base is ```bellsoft/liberica-openjdk-alpine:latest-armv7l```.
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/mephistoxol/jdownloader?logo=docker)](https://hub.docker.com/r/mephistoxol/jdownloader)
+[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/mephistoxol/jdownloader/latest?logo=linux&logoColor=white)](https://hub.docker.com/r/mephistoxol/jdownloader)
+[![MicroBadger Layers](https://img.shields.io/microbadger/layers/mephistoxol/jdownloader/latest)](https://hub.docker.com/r/mephistoxol/jdownloader)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/mephistoxol/jdownloader/latest)](https://hub.docker.com/r/mephistoxol/jdownloader)
+[![Docker Stars](https://img.shields.io/docker/stars/mephistoxol/jdownloader)](https://hub.docker.com/r/mephistoxol/jdownloader)
+[![Paypal](https://img.shields.io/badge/paypal-donate-orange?logo=paypal)](https://www.paypal.me/mephistoxol)
+
+
+The image base is ```alpine```.
 
 Container firts run download the last JDownloader version and install it, wait a while to complete the installation (around 5 min.).
 
@@ -46,11 +55,13 @@ services:
       - EMAIL=MyJDownloaderAccount
       - PASSWORD=MyJDownloaderPassword
       - DEVICENAME=yourdevicename
+    ##################
     # Traefik v1.7 optional
-    labels:
-      - traefik.enable: "false"
-    networks:      
-      - proxy-tier
+    #labels:
+    #  - traefik.enable: "false"
+    #networks:      
+    #  - proxy-tier
+    ##################
     volumes:
       - /your/path/for/data:/app/JDownloader/Downloads
 ```
@@ -67,15 +78,25 @@ Ansible:
           EMAIL: "MyJDownloaderAccount"
           PASSWORD: "MyJDownloaderPassword"
         restart_policy: always
+        ##################
         # Traefik v1.7 optional
-        labels:
-          traefik.enable: "false"
-        networks:
-          - name: proxy-tier
+        #labels:
+        #  traefik.enable: "false"
+        #networks:
+        #  - name: proxy-tier
+        ##################
       register: result
 
 ```
 
+## Changelog
+```
+02-04-2021
+- MultiArch-v1.0
+- Rebased to Alpine
+- Added Multi-Arch building
+- Minor fixes in Entrypoint script
+```
 
 ## Donate
 [![Paypal](https://raw.githubusercontent.com/MephistoXoL/Things/master/paypal.png)](https://www.paypal.me/mephistoxol)
