@@ -91,6 +91,11 @@ Ansible:
 
 ## Changelog
 ```
+03-04-2021
+- Fixed EoL in entrypoint.sh
+- Removed tini-static
+```
+```
 02-04-2021
 - MultiArch-v1.0
 - Rebased to Alpine
