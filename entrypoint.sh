@@ -33,10 +33,17 @@ echo "##################################"
 echo "#Checking JDownloader is Updating"
 echo "##################################"
 FILE_INIT=/app/JDownloader/JDownloader.jar
+FILE_UPDATED=/app/JDownloader/tmp/update/self/JDU/JDownloader.jar
 if [ ! -f $FILE_INIT ]; then
         rm -f /app/JDownloader/JDownloader.jar.*
         rm -f /app/JDownloader/JDownloader.pid
-        cp /app/JDownloader/tmp/update/self/JDU/JDownloader.jar /app/JDownloader/
+        if [ -f $FILE_UPDATED ]; then
+                # Copy updated file
+                cp /app/JDownloader/tmp/update/self/JDU/JDownloader.jar /app/JDownloader/
+        else
+                # Copy original file
+                cp /usr/bin/JDownloader.jar /app/JDownloader/
+        fi
         java -Djava.awt.headless=true -jar /app/JDownloader/JDownloader.jar
         echo ""
         echo "#Updating... Wait..."
@@ -45,7 +52,7 @@ if [ ! -f $FILE_INIT ]; then
         ps axf | grep java | grep -v grep | awk '{print $1}' | xargs kill -9
         echo "####################"
         echo "#Update Completed..."
-        echo "####################"
+        echo "####################" 
 fi
 echo "#########################################"
 echo "#Done..."

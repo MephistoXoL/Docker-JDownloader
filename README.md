@@ -91,9 +91,13 @@ Ansible:
 
 ## Changelog
 ```
+04-04-2021 
+- v1.14
+- Minor fixes in entrypoint.sh
+```
+```
 03-04-2021
 - Fixed EoL in entrypoint.sh
-- Removed tini-static
 ```
 ```
 02-04-2021
